@@ -6,7 +6,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.11",
+    "framer-motion": "^7.5.1",
     "next": "latest",
+    "next-themes": "^0.2.1",
     "react": "18.1.0",
     "react-dom": "18.1.0"
   },

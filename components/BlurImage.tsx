@@ -3,10 +3,10 @@ import Image from 'next/image'
 
 interface BlurImageProps {
   src: string
-  width: number
-  height: number
-  fit: any
-  priority: boolean
+  width?: number
+  height?: number
+  fit?: any
+  priority?: boolean
 }
 
 function BlurImage({ src, width, height, fit, priority }: BlurImageProps) {
