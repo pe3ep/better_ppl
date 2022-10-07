@@ -20,14 +20,14 @@ const Home: NextPage = () => {
             <div className="flex flex-col gap-2 mt-8 items-center">
               <Link href="/download">
                 <a className="px-8 py-3 rounded-full bg-emerald-500 dark:bg-emerald-700 text-white flex gap-2 items-center ">
-                  <img src="/static/totem.png" className="w-5 h-5" alt="" />
+                  <img src="/static/totem.svg" className="w-5 h-5" alt="" />
                   Скачать Тотемы
                 </a>
               </Link>
               <Link href="/download">
                 <a className="px-8 py-3 rounded-full bg-zinc-500 dark:bg-zinc-700 text-white flex gap-2 items-center ">
                   <img
-                    src="/static/cardboard_box.png"
+                    src="/static/cardboard_box.svg"
                     alt=""
                     className="w-5 h-5"
                   />
