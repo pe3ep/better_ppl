@@ -46,8 +46,8 @@ const Menubutton = () => {
     <>
       <button
         onClick={() => setOpen(!open)}
-        className={`transition z-40 relative p-2 ${
-          open && 'bg-neutral-300 dark:bg-neutral-700'
+        className={`transition z-[60] relative p-2 ${
+          open && 'bg-neutral-300 dark:bg-neutral-800'
         } rounded-lg`}>
         {open ? (
           <XMarkIcon className="w-6 h-6" />
@@ -61,7 +61,7 @@ const Menubutton = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.2 } }}
             exit={{ opacity: 0, transition: { duration: 0.2 } }}
-            className="fixed inset-0 z-30 bg-neutral-700/60 flex justify-center py-32"
+            className="fixed inset-0 z-50 bg-neutral-800/70 dark:bg-neutral-700/60 flex justify-center py-32"
             onClick={() => setOpen(!open)}>
             <motion.nav
               className="flex flex-col gap-4 w-full max-w-md mx-12"
@@ -74,9 +74,9 @@ const Menubutton = () => {
                       onClick={() => setOpen(!open)}
                       className={`transition ${
                         router.pathname === item.slug
-                          ? 'bg-emerald-500 dark:bg-emerald-700'
-                          : 'bg-neutral-500 dark:bg-neutral-700'
-                      } py-5 px-5 rounded-xl text-white  flex gap-3 items-center`}>
+                          ? 'bg-emerald-600 dark:bg-emerald-700'
+                          : 'bg-neutral-600 dark:bg-neutral-700'
+                      } py-5 px-5 rounded-xl text-white flex gap-3 items-center`}>
                       {item.icon}
                       {item.name}
                     </a>

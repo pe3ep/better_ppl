@@ -21,17 +21,14 @@ const Navigation = ({ children }: any) => {
   const linkList = [
     {
       name: 'Главная',
-      icon: <img src="/static/house.svg" className="w-5 h-5" alt="" />,
       slug: '/',
     },
     {
       name: 'Тотемы',
-      icon: <img src="/static/totem.svg" className="w-5 h-5" alt="" />,
       slug: '/totems',
     },
     {
       name: 'Сборки',
-      icon: <img src="/static/cardboard_box.svg" className="w-5 h-5" alt="" />,
       slug: '/modpacks',
     },
   ]
@@ -40,14 +37,28 @@ const Navigation = ({ children }: any) => {
     <>
       <header
         className={`transition fixed w-full border-zinc-800/50 ${
-          small ? 'bg-neutral-900/90 backdrop-blur-xl border-b ' : ''
+          small ? 'bg-zinc-900/90 backdrop-blur-xl border-b ' : ''
         }`}>
         <div className={`container mx-auto py-6 `}>
           <div className="px-6 grid grid-flow-col grid-cols-3 items-center">
-            <div className="mr-auto">
-              <div className="flex items-center p-2">
-                <ThemeChanger />
-              </div>
+            <div className="mr-auto hidden lg:flex">
+              <nav className="flex gap-4">
+                {linkList.map((item, index) => (
+                  <Link href={item.slug}>
+                    <a
+                      className={`transition flex text-black dark:text-white py-2 px-4 rounded-lg gap-2 ${
+                        router.pathname === item.slug
+                          ? 'bg-neutral-200 dark:bg-neutral-800'
+                          : 'hover:bg-neutral-200 hover:dark:bg-neutral-800 hover:shadow-lg'
+                      } items-center`}>
+                      {item.name}
+                    </a>
+                  </Link>
+                ))}
+              </nav>
+            </div>
+            <div className="mr-auto lg:hidden">
+              <Menubutton />
             </div>
             <div className="mx-auto">
               <motion.div
@@ -61,25 +72,10 @@ const Navigation = ({ children }: any) => {
                 </Link>
               </motion.div>
             </div>
-            <div className="ml-auto lg:hidden">
-              <Menubutton />
-            </div>
-            <div className="ml-auto hidden lg:flex">
-              <nav className="flex gap-4">
-                {linkList.map((item, index) => (
-                  <Link href={item.slug}>
-                    <a
-                      className={`transition flex text-black dark:text-white py-2 px-4 rounded-lg gap-2 ${
-                        router.pathname === item.slug
-                          ? 'bg-emerald-500 dark:bg-emerald-700'
-                          : 'bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 hover:shadow-lg'
-                      } items-center`}>
-                      {item.icon}
-                      {item.name}
-                    </a>
-                  </Link>
-                ))}
-              </nav>
+            <div className="ml-auto">
+              <div className="flex items-center p-2">
+                <ThemeChanger />
+              </div>
             </div>
           </div>
         </div>
